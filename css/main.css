@@ -1,0 +1,41 @@
+/*xs*/
+@media only screen and (max-width:767px) and (min-width:0px)
+{
+	.image_box
+	{
+		margin-bottom: 10px;	
+		
+	}
+	
+}
+
+//small and up
+@media only screen and(min-width:768px)
+{
+    .image_box
+	{
+		/*min-height: 2000px !important;	*/
+		padding-bottom:100px;
+	}
+}
+
+
+#current_image
+{
+	max-height: 500px;	
+}
+
+//medium and up
+@media only screen and (min-width: 992px)
+{
+    
+    
+}
+
+
+//large and up
+@media only screen and(min-width:1200px)
+{
+    
+}
+

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="./js/jquery-2.2.3.min.js"></script>
+        <script src="./js/bootstrap.min.js"></script>
+        <link href="./css/bootstrap.min.css" rel="stylesheet"/>
+		<script src="https://code.responsivevoice.org/responsivevoice.js" ></script>
+        <script src="../variables.js"></script>
+		<link href="./css/main.css" rel="stylesheet"/>
+        <script src="./js/logic.js"></script>
+    </head>
+    
+    
+    <body>
+        <div class="container">
+        <div class="row">
+            <div class="col-xs-12">
+                <img class="img-responsive" style="width:500px; height:200px;"src="https://www.wired.com/wp-content/uploads/2015/09/google-logo.jpg"></img>
+                <h1>Vision API Concept</h1>
+            </div>    
+
+             <div class="col-xs-12 col-sm-6 image_box">   
+                <h2>Upload Image or Take Picture</h2>
+                <input id="image_input" type="file" accept="image">
+				<!--<input type="file" accept="image/*" capture="camera">-->
+				<!--<button style="margin-top:10px;" class="btn btn-default btn-success"><span class="glyphicon glyphicon-camera"></span> Camera</button>-->
+				<img style="height:300px" class="visible-sm visible-md visible-lg">
+                
+            </div>
+            
+            <div class="col-xs-12 col-sm-6 image_box">
+                
+                <h2>Your Image</h2>
+                <img class="img-responsive" id="current_image"></img>
+                <canvas style="display:none;" id="canvas"></canvas>
+            </div>
+        
+            <div class="col-xs-12">
+                <button class="btn btn-default btn-primary" style="margin-bottom:10px; margin-top:10px;" id="submit">Submit</button>
+				<!--<button class="btn btn-default btn-warning">Cancel</button>-->
+            </div>
+			
+			<div class="col-xs-12">
+				<p>
+					<textarea id="text" cols="45" rows="3">Hello World!</textarea>
+					<select id="voiceselection"></select>
+					<input 
+					 onclick="responsiveVoice.speak($('#text').val(),$('#voiceselection').val());" 
+					 type="button" 
+					 value="Play" 
+					/>
+					<script>
+					//Populate voice selection dropdown
+					var voicelist = responsiveVoice.getVoices();
+					var vselect = $("#voiceselection");
+					$.each(voicelist, function() {
+							vselect.append($("<option />").val(this.name).text(this.name));
+					});
+				 </script>
+				</p>
+				
+				
+						<div style="margin-left:center;">
+					<div class="hidden-xs img-responsive">
+						<footer class="footerPad" id="footerPad">
+							<p><div style="line-height:8px; font-size: 0.875em;">Copyright Eye Dog GDGNJ</div></p>
+							<p><div style="line-height:8px; font-size: 0.875em;">Feel free to share the information in this APP with your friends.</div></p>
+						</footer>
+					</div>
+		
+							<p><div id="footerPad" class="text-align:responsive"><small>&copy; copyright 2016 Eye Dog</small></p></div>
+				</div>  
+				
+			</div>	
+        
+        </div>
+        <!--rrow        -->
+        </div>
+        <!--container-->
+    </body>
+    
+    
+    
+</html>
